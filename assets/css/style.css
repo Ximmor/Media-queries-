@@ -1,0 +1,157 @@
+.nav{
+    grid-area: nav;
+    background-color:#ff6f96;
+    color:#dfdcdb;
+    padding-right: 1 rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+.menu-open {
+    display: block;
+}
+
+.name{
+    display: flex;
+}
+.nav img{
+    width: 3rem;
+}
+.orderBy{
+    grid-area: orderBy;
+    background-color: #e1927f;
+    color: #0862e8dc;
+    font-weight: bolder;
+    padding-bottom: 5px;
+}
+.orderBy select{
+    border-color:#9d8189;
+    border-radius: 5px;
+    border-width: 2px;
+    color: #9d8189;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filter select{
+    width: 50%;
+}
+.main{
+    grid-area: main;
+    background-color: hsl(60, 19%, 93%);
+    overflow: scroll;
+}
+.productCard {
+    border: solid 5px #e1927f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.productCard img {
+    width: 100%;
+    max-height: 200px;
+}
+
+.productDetails {
+    text-align: center;
+    padding: 10px;
+}
+
+.btn{
+    background-color:#644e43;
+    width: 100%;
+    text-align: center;
+    color:#dfdcdb;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+.footer{
+    grid-area: footer;
+    background-color:#e1927f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e1927f;
+}
+
+.footer p{
+    margin: 0%;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.socialMedia{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto 1fr auto auto;
+    grid-template-areas:
+    'nav'
+    'orderBy'
+    'main'
+    'footer';
+    height: 100vh;
+    width: 100%;
+}
+
+@media(min-width:576px){
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .link{
+        text-decoration: none;
+        color:#644e43;
+    }
+    .nav i{
+        display: none;
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
+    .main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        overflow: scroll;
+    }
+    .productCard{
+        width: 15rem;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    .grid-container{
+        grid-template-columns: auto 1fr;
+        grid-template-rows:auto 1fr 1fr auto;
+        grid-template-areas:
+        'nav orderBy'
+        'nav main'
+        'nav main'
+        'footer pager';
+    }
+}
